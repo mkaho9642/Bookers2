@@ -1,23 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
-      <img></img>
-      <table class="table">
-      <h2>New book</h2>
-      <%= form_with model: @book do |f| %>
-        <label>Title</label>
-        <div class="field">
-          <%= f.text_field :title %>
-        </div>
-        <label>Body</label>
-        <div class="field">
-          <%= f.text_area :body %>
-        </div>
-        <div class="field">
-          <%= link_to 'Create Book', new_book_path, class: "btn btn-secondary" %>
-        </div>
-      <% end %>
+      <%= render 'books/user_info', book: @books %>
+      <%= render 'books/new_book', book: @books %>
     </div>
     <div class="col-md-8 offset-md-1">
       <table class="table table-striped">
