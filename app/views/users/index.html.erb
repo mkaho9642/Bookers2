@@ -1,5 +1,13 @@
-<div class="col-md-3">
-  <%= render 'books/user_info', book: @books %>
-  <%= render 'books/new_book', book: @books %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/user_info', book: @books %>
+      <%= render 'books/new_book', book: @books %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <table class="table table-striped">
+        <h2>Books</h2>
+      </table>
+    </div>
+  </div>
 </div>
-<h1>Books</h1>
