@@ -1,9 +1,13 @@
 <h2>User info</h2>
+<div>
+  
+</div>
 <table class="table">
   <tbody>
     <tr>
       <th>name</th>
-      <td></td>
+      <td>
+      <td>
     </tr>
     <tr>
       <th>introduction</th>
@@ -12,7 +16,7 @@
   </tbody>
 <table>
 <div class="row">
-  <%= link_to "/users/:id/edit", class: "btn btn-outline-secondary" do %>
+  <%= button_to edit_user_path, class: "btn btn-outline-secondary btn-block" do %>
     <i class="fa-solid fa-user-gear"></i>
   <% end %>
 </div>
