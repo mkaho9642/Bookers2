@@ -9,6 +9,6 @@
     <%= f.text_area :body, class: 'form-control book_body' %>
   </div>
   <div>
-    <%= f.submit 'Create Book', class: "btn btn-success" %>
+    <%= button_tag 'Create Book', class: 'btn btn-success', method: :post %>
   </div>
 <% end %>
