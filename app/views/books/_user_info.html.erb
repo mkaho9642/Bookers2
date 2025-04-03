@@ -1,17 +1,20 @@
 <h2>User info</h2>
 <div>
-  
+  <% if @user.profile_image.attached? %>
+    <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]) %>
+  <% else %>
+    <%= image_tag "no-image.jpg", size: "100x100" %>
+  <% end %>
 </div>
 <table class="table">
   <tbody>
     <tr>
       <th>name</th>
-      <td>
-      <td>
+      <td><span><%= user.name %></span><td>
     </tr>
     <tr>
       <th>introduction</th>
-      <td></td>
+      <td><span><%= user.introduction %></span></td>
     <tr>
   </tbody>
 </table>
