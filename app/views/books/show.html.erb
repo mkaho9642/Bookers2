@@ -3,11 +3,21 @@
   <table class="table">
     <tbody>
       <tr>
-        <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
-        <td><span><%= user.name %></span></td>
-        <td></td>
         <td>
-          <%= link_to "Edit", edit_book_path, method: :get %>
+          <%= link_to user_path(@user) do %>
+            <%= image_tag @user.get_profile_image(80,80) %>
+          <% end %>
+        </td>
+        <td><span><%= @user.name %></span></td>
+        <td>
+          <%= link_to book_path(@book) do %>
+            <%= @book.title %>
+          <% end %>
+        </td>
+        <td>
+          <% if @book.user == current_user %>
+            <%= link_to "Edit", edit_book_path(@book) %>
+          <% end %>
         </td>
         <td>
           <% if @book.user == current_user %>
