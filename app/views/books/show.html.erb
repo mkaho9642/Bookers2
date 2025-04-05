@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3">
       <%= render 'books/user_info', user: @user %>
-      <%= render 'books/new_book', book: @book %>
+      <%= render 'books/new_book', book: @new_book %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
@@ -15,8 +15,11 @@
                 <%= @user.name %>
               <% end %>
             </td>
-            <td><span><%= @user.name %></span></td>
-            <td><%= @book.title %></td>
+            <td>
+              <%= link_to book_path(@book) do %>
+                <%= @book.title %>
+              <% end %>
+            </td>
             <td><%= @book.body %></td>
             <td>
               <% if @book.user == current_user %>
