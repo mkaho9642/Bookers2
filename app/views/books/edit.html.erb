@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
+      <%= render 'layouts/error_message', book: @book %> 
         <%= form_with model: @book, mothod: :patch do |f| %>
           <label>Title</label>
           <div class="form-group">
