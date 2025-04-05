@@ -1,30 +1,35 @@
-<div class="col-md-8 offset-md-1">
-  <h2>Book detail</h2>
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>
-          <%= link_to user_path(@user) do %>
-            <%= image_tag @user.get_profile_image(80,80) %>
-          <% end %>
-        </td>
-        <td><span><%= @user.name %></span></td>
-        <td>
-          <%= link_to book_path(@book) do %>
-            <%= @book.title %>
-          <% end %>
-        </td>
-        <td>
-          <% if @book.user == current_user %>
-            <%= link_to "Edit", edit_book_path(@book) %>
-          <% end %>
-        </td>
-        <td>
-          <% if @book.user == current_user %>
-            <%= link_to "Destroy", book_path(@book), class: "btn btn-danger" method: :delete, "data-confirm" => "本当に消しますか？" %>
-          <% end %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/user_info', user: @user %>
+      <%= render 'books/new_book', book: @book %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to user_path(@user) do %>
+                <%= image_tag @user.get_profile_image(80,80) %>
+              <% end %>
+            </td>
+            <td><span><%= @user.name %></span></td>
+            <td><%= @book.title %></td>
+            <td><%= @book.body %></td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "Edit", edit_book_path(@book) %>
+              <% end %>
+            </td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
